@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.item {
+  background-color: lightblue;
+  padding: 5px;
+  margin-top: 10px;
+}
+.completed {
+  text-decoration: line-through;
+  background-color: red;
+}

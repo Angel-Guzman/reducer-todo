@@ -1,21 +1,17 @@
 import React, { useReducer } from 'react';
 import { reducer, tasks } from './reducers/reducer.js';
+import TodoList from './components/TodoList.js';
+import TodoForm from './components/TodoForm.js';
 
 function App() {
-
-  const [state, dispatch] = useReducer(reducer, tasks)
   
+  const [state, dispatch] = useReducer(reducer, tasks);
+
   return (
     <div>
       <h1>Todo App</h1>
-      <div className="tasks">
-        {tasks.map(item => {
-          return <p>{item.task}</p>
-        })}
-      </div>
-      <div className="todo-form">
-        
-      </div>
+      <TodoForm dispatch={dispatch} />
+      <TodoList dispatch={dispatch} tasks={state} />
     </div>
   );
 }

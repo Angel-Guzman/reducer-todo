@@ -1,9 +1,24 @@
-import React from 'react';
-
 export const reducer = (state, action) => {
     switch(action.type) {
-        default: 
-            return state;
+        case 'ADD_TASK':
+            return [
+                ...state,
+                action.payload,
+            ]
+        case 'TOGGLE_COMPLETE':
+            return (
+                state.map(task => {
+                    if (task.id === action.payload ) {
+                        debugger
+                        task.completed = !task.completed
+                        debugger
+                        return task
+                    }
+                    return task
+                })
+            )
+            default: 
+                return state;
     }
 }
 

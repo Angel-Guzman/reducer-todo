@@ -9,13 +9,18 @@ export const reducer = (state, action) => {
             return (
                 state.map(task => {
                     if (task.id === action.payload ) {
-                        debugger
+                        // debugger
                         task.completed = !task.completed
-                        debugger
+                        // debugger
                         return task
-                    }
+                    } 
                     return task
                 })
+            )
+        case 'CLEAR_COMPLETED':
+            const newState = [...state.filter(item => item.completed === false)]
+            return (
+                newState
             )
             default: 
                 return state;

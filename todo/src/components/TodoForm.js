@@ -22,12 +22,19 @@ export default function TodoForm(props) {
                 />
             </label>
                 <button
+                // disabled={newTask.length !== 0 ? 'true' : 'false'}
                     onClick={() => {
                         props.dispatch({ type: 'ADD_TASK', payload: {task: newTask, id: Date.now(), completed: false }})
                         setNewTask('')
                     }}
 
                 >Add Task
+                </button>
+                <button
+                    onClick={() => {
+                        props.dispatch({ type: 'CLEAR_COMPLETED'})
+                    }}
+                >Clear Completed
                 </button>
         </div>
     )
